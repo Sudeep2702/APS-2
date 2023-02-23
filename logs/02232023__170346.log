@@ -1,0 +1,8 @@
+[ 2023-02-23 17:03:47,324 ] 21 root - INFO - initiating data
+[ 2023-02-23 17:04:11,988 ] 77 root - INFO - Before resampling in training set Input: (36188, 171) Target:(36188,)
+[ 2023-02-23 17:04:17,380 ] 79 root - INFO - After resampling in training set Input: (70190, 171) Target:(70190,)
+[ 2023-02-23 17:04:17,380 ] 81 root - INFO - Before resampling in testing set Input: (36188, 171) Target:(36188,)
+[ 2023-02-23 17:04:22,544 ] 83 root - INFO - After resampling in testing set Input: (70190, 171) Target:(70190,)
+[ 2023-02-23 17:04:22,829 ] 45 root - INFO - Entered the save_object method of utils
+[ 2023-02-23 17:04:22,829 ] 45 root - INFO - Entered the save_object method of utils
+[ 2023-02-23 17:04:22,830 ] 114 root - INFO - Data transformation object DataTransformationArtifact(transform_object_path='/config/workspace/artifact/02232023__170347/data_transformation/transformer/transformer.pkl', transformed_train_path='/config/workspace/artifact/02232023__170347/data_transformation/transformed/train. npz', transformed_test_path='/config/workspace/artifact/02232023__170347/data_transformation/transformed/train.npz', target_encoder_path='/config/workspace/artifact/02232023__170347/data_transformation/target_encoder/target_encoder.pkl')

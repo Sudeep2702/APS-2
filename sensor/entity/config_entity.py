@@ -7,9 +7,9 @@ from datetime import datetime
 BASE_FILE = "sensor.csv"
 TRAIN_FILE= "train.csv"
 TEST_FILE= "test.csv"
-# TRANSFORMER_OBJECT_FILE_NAME = "transformer.pkl"
-# TARGET_ENCODER_OBJECT_FILE_NAME = "target_encoder.pkl"
-# MODEL_FILE_NAME = "model.pkl"
+TRANSFORMER_OBJECT_FILE_NAME = "transformer.pkl"
+TARGET_ENCODER_OBJECT_FILE_NAME = "target_encoder.pkl"
+MODEL_FILE_NAME = "model.pkl"
 
 
 
@@ -54,20 +54,24 @@ class DATA_VALIDATION_CONFIG :
 
             raise SensorException(e, sys)
 
-# class DATA_TRANSFOMAITON_CONFIG :
+class DATA_TRANSFOMAITON_CONFIG :
+     def __init__(self,training_pipeline_config : TRAINING_PIPELINE_CONFIG):
+        try :
+            self.data_transformation_dir = os.path.join(training_pipeline_config.artifact_dir,"data_transformation")
+            self.transform_object_path = os.path.join(self.data_transformation_dir,"transformer",TRANSFORMER_OBJECT_FILE_NAME)
+            self.transformed_train_path = os.path.join(self.data_transformation_dir,"transformed",TRAIN_FILE.replace("csv"," npz"))
+            self.transformed_test_path = os.path.join(self.data_transformation_dir,"transformed",TRAIN_FILE.replace("csv", "npz"))
+            self.target_encoder_path = os.path.join(self.data_transformation_dir,"target_encoder",TARGET_ENCODER_OBJECT_FILE_NAME)
+        except Exception as e:
+            raise SensorException(e, sys)
+
+# class MODEL_TRAINER :
 #      def __init__(self,training_pipeline_config : TRAINING_PIPELINE_CONFIG):
 #         try :
-#             self.data_transformation_dir = os.path.join(training_pipeline_config.artifact_dir,"data_transformation")
-#             self.transform_object_path = os.path.join(self.data_transformation_dir,"transformer",TRANSFORMER_OBJECT_FILE_NAME)
-#             self.transformed_train_path = os.path.join(self.data_transformation_dir,"transformed",TRAIN_FILE.replace("csv"," npz"))
-#             self.transformed_test_path = os.path.join(self.data_transformation_dir,"transformed",TRAIN_FILE.replace("csv", "npz"))
-#             self.target_encoder_path = os.path.join(self.data_transformation_dir,"target_encoder",TARGET_ENCODER_OBJECT_FILE_NAME)
+#             model_trainer_dir = os.path.join(training_pipeline_config.artifact_dir,"model_trainer")
+#             model_path = os.path.join(self.model_trainer_dir,"model",)
 
-
-        
-        # except Exception as e:
-
-        #     raise SensorException(e, sys)              
+                     
 
 
             

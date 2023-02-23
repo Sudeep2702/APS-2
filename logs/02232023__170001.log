@@ -1,0 +1,7 @@
+[ 2023-02-23 17:00:02,301 ] 21 root - INFO - initiating data
+[ 2023-02-23 17:00:29,146 ] 77 root - INFO - Before resampling in training set Input: (36188, 171) Target:(36188,)
+[ 2023-02-23 17:00:34,545 ] 79 root - INFO - After resampling in training set Input: (70190, 171) Target:(70190,)
+[ 2023-02-23 17:00:34,546 ] 81 root - INFO - Before resampling in testing set Input: (36188, 171) Target:(36188,)
+[ 2023-02-23 17:00:39,841 ] 83 root - INFO - After resampling in testing set Input: (70190, 171) Target:(70190,)
+[ 2023-02-23 17:00:40,144 ] 45 root - INFO - Entered the save_object method of utils
+[ 2023-02-23 17:00:40,144 ] 45 root - INFO - Entered the save_object method of utils

@@ -10,6 +10,7 @@ from sensor.entity.config_entity import DATA_VALIDATION_CONFIG
 from sensor.components.data_validaiton import DATA_VALIDATION
 
 from sensor.entity.config_entity import DATA_TRANSFOMAITON_CONFIG
+from sensor.components.data_transformation import DATA_TRANSFORMATION
 
 
 
@@ -27,10 +28,11 @@ if __name__ == "__main__":
           data_validation = DATA_VALIDATION(data_validation_config= DVC, data_ingestion_artifact= data_ingestion_artifact)
           Data_V_artifact = data_validation.initiate_data_validation()
           #data_transformation
-          DTC = DATA_TRANSFOMAITON_CONFIG(training_pipeline_config=training_pipeline_config)
-          Data_transformation = Data_transformation
+          DTC= DATA_TRANSFOMAITON_CONFIG(training_pipeline_config=training_pipeline_config)
+          Data_transformation = DATA_TRANSFORMATION(data_transformation_config=DTC  , data_ingestion_artifact=data_ingestion_artifact )
+          data_transformation_artifact = Data_transformation.initiate_data_transformation()
      
      except Exception as e:
-          print(e)
+          raise SensorException(e, sys)
           
         
